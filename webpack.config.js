@@ -30,7 +30,7 @@ module.exports = {
   },
 
   plugins: [
-    new CopyWebpackPlugin(['assets/*.jpg', 'assets/*.mp4']),
+    new CopyWebpackPlugin(['assets/*.jpg', 'assets/*.mp4', 'assets/*.svg']),
     new HtmlWebpackPlugin({
       favicon: __dirname + '/assets/favicon.ico',
       inlineSource: '\.(css|js)$',
