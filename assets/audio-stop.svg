@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96px" height="96px" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>Stop</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Collection" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop" transform="translate(-1273.000000, -860.000000)">
+            <g id="Stop" transform="translate(1273.000000, 860.000000)">
+                <circle id="Oval" fill="#FFFFFF" fill-rule="nonzero" cx="48" cy="48" r="48"></circle>
+                <polygon id="✖" fill="#E3E1E4" points="66.8242188 59.59375 57.4179688 69 47.2734375 58.8554688 37.15625 69 27.7226562 59.59375 37.8671875 49.4492188 27.7226562 39.3867188 37.2109375 29.8984375 47.2734375 39.9882812 57.3632812 29.8984375 66.8242188 39.3867188 56.6796875 49.4492188"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
