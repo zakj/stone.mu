@@ -1,6 +1,7 @@
 import rafThrottle from 'raf-throttle';
 import './base.styl';
 
+const background = document.querySelector('.background');
 const title = document.querySelector('.title');
 const social = document.querySelectorAll('.social img');
 const titleRatio = 0.8;
@@ -29,3 +30,8 @@ const resize = () => {
 
 window.addEventListener('resize', rafThrottle(resize));
 resize();
+
+window.addEventListener('scroll', () => {
+  const overScroll = Math.abs(window.scrollY) / 300;
+  background.style.transform = `scale(${1 + overScroll})`;
+});

@@ -6,10 +6,6 @@ $text-color = #fff
 
 body
   background-color $background-color
-  background-image url(assets/bg.jpg)
-  background-position center
-  background-repeat no-repeat
-  background-size cover
   color $text-color
   display flex
   flex-direction column
@@ -17,6 +13,18 @@ body
   height 100vh
   margin 0
   padding 24px
+
+.background
+  background-image url(assets/bg.jpg)
+  background-position center
+  background-repeat no-repeat
+  background-size cover
+  bottom 0
+  left 0
+  position fixed
+  right 0
+  top 0
+  z-index -1
 
 h1
   margin 0
