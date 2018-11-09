@@ -12,14 +12,19 @@ const dimensions = () => ({
 
 const resize = () => {
   const {w, h} = dimensions();
+  const isSmall = w <= 400;
+
   // Account for URL bar/chrome on mobile.
-  if (document.body.clientHeight > h) {
+  if (document.body.clientHeight !== h) {
     document.body.style.height = `${h}px`;
   }
-  const safePercent = w > 400 ? .5 : .6;
+
+  const safePercent = isSmall ? .6 : .5;
   const titleWidth = Math.min(w * safePercent, h * safePercent / titleRatio);
   title.style.width = `${titleWidth}px`;
-  social.forEach(e => e.style.height = `${titleWidth * .085}px`);
+
+  const socialScale = isSmall ? 0.12 : 0.085;
+  social.forEach(e => e.style.height = `${titleWidth * socialScale}px`);
 };
 
 window.addEventListener('resize', rafThrottle(resize));
