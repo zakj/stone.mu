@@ -29,6 +29,12 @@ body
   top 0
   z-index -1
 
+svg
+  opacity 0
+  transition opacity 200ms ease-in
+.loaded svg
+  opacity 1
+
 h1
   grid-area title
   margin 0
@@ -36,23 +42,17 @@ h1
 
 .social
   grid-area social
+  list-style none
+  padding 0
   a
-    display block
-    position relative
-    &::after
-      background $text-color
-      bottom 5px
-      content ""
-      display none
-      height 2px
-      left 0
-      position absolute
-      right 0
-    &:hover::after
-      display block
+    .underline
+      stroke none
+      stroke-width 5
+    &:hover .underline
+      stroke #fff
     @media (hover: none)
-      &:hover::after
-        display none
+      &:hover .underline
+        stroke none
 
 .audio
   align-self end

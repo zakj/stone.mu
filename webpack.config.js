@@ -1,5 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
+const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -37,6 +38,7 @@ module.exports = {
       template: './index.html',
     }),
     new HtmlWebpackInlineSourcePlugin(),
+    new HtmlWebpackInlineSVGPlugin({runPreEmit: true}),
     new MiniCssExtractPlugin({
       filename: 'main.[hash].css',
     }),

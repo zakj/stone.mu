@@ -4,8 +4,8 @@ import './base.styl';
 const audioContainer = document.querySelector('.audio');
 const audioPlayer = document.querySelector('.audio audio');
 const background = document.querySelector('.background');
-const title = document.querySelector('.title');
-const social = document.querySelectorAll('.social img');
+const title = document.querySelector('h1 svg');
+const social = document.querySelectorAll('.social svg');
 const titleRatio = 0.8;
 
 const dimensions = () => ({
@@ -32,6 +32,7 @@ const resize = () => {
 
 window.addEventListener('resize', rafThrottle(resize));
 resize();
+document.body.classList.add('loaded');
 
 window.addEventListener('scroll', () => {
   const overScroll = Math.abs(window.scrollY) / 300;
