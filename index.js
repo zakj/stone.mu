@@ -1,6 +1,8 @@
 import rafThrottle from 'raf-throttle';
 import './base.styl';
 
+const audioContainer = document.querySelector('.audio');
+const audioPlayer = document.querySelector('.audio audio');
 const background = document.querySelector('.background');
 const title = document.querySelector('.title');
 const social = document.querySelectorAll('.social img');
@@ -34,4 +36,14 @@ resize();
 window.addEventListener('scroll', () => {
   const overScroll = Math.abs(window.scrollY) / 300;
   background.style.transform = `scale(${1 + overScroll})`;
+});
+
+audioContainer.addEventListener('click', () => {
+  const playing = audioContainer.classList.contains('playing');
+  audioContainer.classList.toggle('playing');
+  playing ? audioPlayer.pause() : audioPlayer.play();
+});
+
+audioPlayer.addEventListener('ended', () => {
+  audioContainer.classList.remove('playing');
 });

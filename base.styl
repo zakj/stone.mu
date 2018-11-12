@@ -7,9 +7,12 @@ $text-color = #fff
 body
   background-color $background-color
   color $text-color
-  display flex
-  flex-direction column
+  display grid
   font 16px/1.3 sans-serif
+  grid-template-areas:
+    "title  title" \
+    "social audio"
+  grid-template-rows auto 1fr
   height 100vh
   margin 0
   padding 24px
@@ -27,42 +30,62 @@ body
   z-index -1
 
 h1
+  grid-area title
   margin 0
   margin-bottom 25px
 
 .social
-  margin-right auto
-  position relative
-  &::after
-    background $text-color
-    bottom 5px
-    content ""
-    display none
-    height 2px
-    left 0
-    position absolute
-    right 0
-  &:hover::after
+  grid-area social
+  a
     display block
-  @media (hover: none)
-    &:hover::after
+    position relative
+    &::after
+      background $text-color
+      bottom 5px
+      content ""
       display none
+      height 2px
+      left 0
+      position absolute
+      right 0
+    &:hover::after
+      display block
+    @media (hover: none)
+      &:hover::after
+        display none
 
 .audio
-  align-self flex-end
+  align-self end
+  background-image url(assets/audio-play.svg)
+  background-position center
+  background-repeat no-repeat
+  background-size cover
+  cursor pointer
+  grid-area audio
+  height 48px
+  justify-self end
   margin-top auto
+  width 48px
+.audio.playing
+  background-image url(assets/audio-stop.svg)
 
 // Varying sizes per breakpoint.
 
 @media only screen and (min-width: 600px)
   body
     padding 56px
+  .audio
+    height 56px
+    width 56px
   .social::after
     bottom 5px
     height 2px
 @media only screen and (min-width: 1024px)
   body
     padding 64px
+  .audio
+    height 64px
+    width 64px
   .social::after
     bottom 5px
     height 4px
