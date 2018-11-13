@@ -19,7 +19,7 @@ body
 
 .background
   background-image url(assets/bg.jpg)
-  background-position center
+  background-position center center
   background-repeat no-repeat
   background-size cover
   bottom 0
@@ -74,12 +74,17 @@ h1
 @media only screen and (min-width: 600px)
   body
     padding 56px
+  .background
+    background-position 25% center
   .audio
     height 56px
     width 56px
   .social::after
     bottom 5px
     height 2px
+@media only screen and (min-width: 800px)
+  .background
+    background-position 0% center
 @media only screen and (min-width: 1024px)
   body
     padding 64px
