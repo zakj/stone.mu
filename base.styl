@@ -46,10 +46,12 @@ h1
   padding 0
   a
     .underline
-      stroke none
       stroke-width 5
-    &:hover .underline
       stroke #fff
+      transform scaleX(0)
+      transition transform 150ms ease-in-out
+    &:hover .underline
+      transform scaleX(1)
     @media (hover: none)
       &:hover .underline
         stroke none
