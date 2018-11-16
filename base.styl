@@ -31,9 +31,19 @@ body
 
 svg
   opacity 0
-  transition opacity 200ms ease-in
+  transform scale(0.8)
+  transform-origin left center
+  transition opacity 600ms ease-in, transform 800ms ease-in
+  transition-timing-function cubic-bezier(0.175, 0.885, 0.32, 1.275)
+.social li:nth-child(1) svg
+  transition-delay 100ms
+.social li:nth-child(2) svg
+  transition-delay 200ms
+.social li:nth-child(3) svg
+  transition-delay 300ms
 .loaded svg
   opacity 1
+  transform scale(1)
 
 h1
   grid-area title
