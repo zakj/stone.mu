@@ -3,7 +3,7 @@ import './base.styl';
 
 const audioContainer = document.querySelector('.audio');
 const audioPlayer = document.querySelector('.audio audio');
-const background = document.querySelector('.background');
+const background = document.querySelector('.background.bg-jpg');
 const title = document.querySelector('h1 svg');
 const social = document.querySelectorAll('.social svg');
 const titleRatio = 0.8;
@@ -32,7 +32,8 @@ const resize = () => {
 
 window.addEventListener('resize', rafThrottle(resize));
 resize();
-document.body.classList.add('loaded');
+
+window.addEventListener('load', () => document.body.classList.add('loaded'));
 
 window.addEventListener('scroll', () => {
   const overScroll = Math.abs(window.scrollY) / 300;
