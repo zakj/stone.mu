@@ -40,12 +40,14 @@ window.addEventListener('scroll', () => {
   background.style.transform = `scale(${1 + overScroll})`;
 });
 
-audioContainer.addEventListener('click', () => {
-  const playing = audioContainer.classList.contains('playing');
-  audioContainer.classList.toggle('playing');
-  playing ? audioPlayer.pause() : audioPlayer.play();
-});
+if (audioContainer) {
+  audioContainer.addEventListener('click', () => {
+    const playing = audioContainer.classList.contains('playing');
+    audioContainer.classList.toggle('playing');
+    playing ? audioPlayer.pause() : audioPlayer.play();
+  });
 
-audioPlayer.addEventListener('ended', () => {
-  audioContainer.classList.remove('playing');
-});
+  audioPlayer.addEventListener('ended', () => {
+    audioContainer.classList.remove('playing');
+  });
+}
